@@ -36,14 +36,6 @@ html {
   font-weight: 100;
 }
 
-@font-face {
-  font-family: 'FontAwesome';
-  src: url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0');
-  src: url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   margin: 0 1em;
   color: $foreground;
@@ -101,8 +93,6 @@ ul {
   @media screen and (max-height: 600px) {
     display: none;
   }
-
-  &::before { content: '\f175'; }
 }
 
 h1, h2.main {
@@ -174,28 +164,21 @@ p#generated {
   }
 }
 
-.icons::before {
+.icons:before {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
   padding-right: 0.3rem;
-  vertical-align: center;
 }
 
-.github::before        { content: "\f09b"; }
-.codepen::before       { content: "\f1cb"; }
-.twitter::before       { content: "\f099"; }
-.instagram::before     { content: "\f16d"; }
-.envelope::before      { content: "\f0e0"; }
-.space-shuttle::before { content: "\f197"; }
-.file::before          { content: "\f15b"; }
-.bicycle::before       { content: "\f206"; }
-.rss::before          { content: "\f09e"; }
+.arrow:before         { content: '\f175'; }
+.github:before        { content: '\f09b'; }
+.codepen:before       { content: '\f1cb'; }
+.twitter:before       { content: '\f099'; }
+.instagram:before     { content: '\f16d'; }
+.envelope:before      { content: '\f0e0'; }
+.space-shuttle:before { content: '\f197'; }
+.file:before          { content: '\f15b'; }
+.bicycle:before       { content: '\f206'; }
+.rss:before           { content: '\f09e'; }
 
 // competencies
 
@@ -269,19 +252,19 @@ meter {
   vertical-align: 0;
 
   // webkit uses this as the background
-  &::-webkit-meter-bar {
+  &:-webkit-meter-bar {
     background: none;
   }
 
   // and this as the foreground
-  &::-webkit-meter-optimum-value {
+  &:-webkit-meter-optimum-value {
     background: $background;
     border: none;
     border-radius: $radius;
   }
 
   // Gecko uses this as the foreground
-  &::-moz-meter-bar {
+  &:-moz-meter-bar {
     background: $background;
     border: none;
     border-radius: $radius;
@@ -301,9 +284,9 @@ meter {
   position: relative;
 
   // foreground part
-  &::after {
+  &:after {
     z-index: 1;
-    content: "";
+    content: '';
     height: $height;
     background: $background;
     border-radius: $radius;
@@ -315,7 +298,7 @@ meter {
 
 // the length of the foreground
 @for $i from 1 through 10 {
-  .level-#{$i}::after {
+  .level-#{$i}:after {
     width: $width*$i/10;
   }
 }
